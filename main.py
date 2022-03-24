@@ -43,10 +43,7 @@ async def get_data_user(data_format="json"):
     
     # default behavior of endpoint (no options: query parameters, path variable, request body)
     json_data = unpack_csv_file("dummy-user-data1.csv")
-    # with open('dummy-user-data1.csv', 'r') as csvfile:
-    #         some_reader = csv.DictReader(csvfile)
-    #         for row in some_reader:
-    #             json_data.append(row)
+
     return json_data
 
 @app.get("/data/user/sensitive")
@@ -56,11 +53,8 @@ async def get_sensitive_user_data(data_format="json"):
         return FileResponse("dummy-sensitive-user-data.csv", filename="random-sensitive-user-data.csv")
     
     # default behavior of endpoint (no options: query parameters, path variable, request body)
-    json_data = []
-    with open("dummy-sensitive-user-data.csv", 'r') as csvfile:
-            some_reader = csv.DictReader(csvfile)
-            for row in some_reader:
-                json_data.append(row)
+    json_data = unpack_csv_file("dummy-sensitive-user-data.csv")
+
     return json_data
 
 @app.get("/data/transaction")
@@ -70,11 +64,8 @@ async def get_transaction_data(data_format="json"):
         return FileResponse("dummy-bank-account-data.csv", filename="random-bank-account-data.csv")
     
     # default behavior of endpoint (no options: query parameters, path variable, request body)
-    json_data = []
-    with open('dummy-bank-account-data.csv', 'r') as csvfile:
-            some_reader = csv.DictReader(csvfile)
-            for row in some_reader:
-                json_data.append(row)
+    json_data = unpack_csv_file("dummy-bank-account-data.csv")
+
     return json_data
 
 @app.get("/data/ip-logs")
@@ -84,9 +75,6 @@ async def get_ip_data(data_format="json"):
         return FileResponse("dummy-ip-data.csv", filename="random-ip-data.csv")
     
     # default behavior of endpoint (no options: query parameters, path variable, request body)
-    json_data = []
-    with open('dummy-ip-data.csv', 'r') as csvfile:
-            some_reader = csv.DictReader(csvfile)
-            for row in some_reader:
-                json_data.append(row)
+    json_data = unpack_csv_file("dummy-ip-data.csv")
+
     return json_data
