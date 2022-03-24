@@ -27,6 +27,13 @@ async def root():
 GET /data/user -> CSV file
 GET /data/user?type=json -> JSON representation of the CSV file
 '''
+def unpack_csv_file(csv_filepath):
+    data = []
+    with open(csv_filepath, 'r') as csvfile:
+        some_reader = csv.DictReader(csvfile)
+        for row in some_reader:
+            data.append(row)
+    return data
 
 @app.get("/data/user")
 async def get_data_user(data_format="json"):
@@ -35,11 +42,11 @@ async def get_data_user(data_format="json"):
         return FileResponse("dummy-user-data1.csv", filename="random-user-data.csv")
     
     # default behavior of endpoint (no options: query parameters, path variable, request body)
-    json_data = []
-    with open('dummy-user-data1.csv', 'r') as csvfile:
-            some_reader = csv.DictReader(csvfile)
-            for row in some_reader:
-                json_data.append(row)
+    json_data = unpack_csv_file("dummy-user-data1.csv")
+    # with open('dummy-user-data1.csv', 'r') as csvfile:
+    #         some_reader = csv.DictReader(csvfile)
+    #         for row in some_reader:
+    #             json_data.append(row)
     return json_data
 
 @app.get("/data/user/sensitive")
