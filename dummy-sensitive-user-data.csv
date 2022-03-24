@@ -1,3 +1,4 @@
+username,password,email
 <bound method Provider.user_name of <faker.providers.internet.en_US.Provider object at 0x7fc9d1b69fd0>>,+Nz8Gf3tpf,monica52@example.net
 <bound method Provider.user_name of <faker.providers.internet.en_US.Provider object at 0x7fc9d1b69fd0>>,(@LIwk!Gm2,joannarosario@example.com
 <bound method Provider.user_name of <faker.providers.internet.en_US.Provider object at 0x7fc9d1b69fd0>>,!IA1Ni0jf^,debragilmore@example.com

@@ -37,9 +37,9 @@ async def get_data_user(data_format="json"):
     # default behavior of endpoint (no options: query parameters, path variable, request body)
     json_data = []
     with open('dummy-user-data1.csv', 'r') as csvfile:
-            some_reader = csv.reader(csvfile)
+            some_reader = csv.DictReader(csvfile)
             for row in some_reader:
-                json_data.append({"first_name": row[0], "last_name": row[1], "email": row[2], "company": row[3]})
+                json_data.append(row)
     return json_data
 
 @app.get("/data/user/sensitive")
@@ -51,9 +51,9 @@ async def get_sensitive_user_data(data_format="json"):
     # default behavior of endpoint (no options: query parameters, path variable, request body)
     json_data = []
     with open("dummy-sensitive-user-data.csv", 'r') as csvfile:
-            some_reader = csv.reader(csvfile)
+            some_reader = csv.DictReader(csvfile)
             for row in some_reader:
-                json_data.append({"Username": row[0], "Password": row[1], "Email": row[2]})
+                json_data.append(row)
     return json_data
 
 @app.get("/data/transaction")
@@ -65,9 +65,9 @@ async def get_transaction_data(data_format="json"):
     # default behavior of endpoint (no options: query parameters, path variable, request body)
     json_data = []
     with open('dummy-bank-account-data.csv', 'r') as csvfile:
-            some_reader = csv.reader(csvfile)
+            some_reader = csv.DictReader(csvfile)
             for row in some_reader:
-                json_data.append({"Name": row[0], "Company": row[1], "City": row[2], "Account Number": row[3]})
+                json_data.append(row)
     return json_data
 
 @app.get("/data/ip-logs")
@@ -79,7 +79,7 @@ async def get_ip_data(data_format="json"):
     # default behavior of endpoint (no options: query parameters, path variable, request body)
     json_data = []
     with open('dummy-ip-data.csv', 'r') as csvfile:
-            some_reader = csv.reader(csvfile)
+            some_reader = csv.DictReader(csvfile)
             for row in some_reader:
-                json_data.append({"ipv4 Address": row[0], "User Agent": row[1], "Passed Date": row[2]})
+                json_data.append(row)
     return json_data
