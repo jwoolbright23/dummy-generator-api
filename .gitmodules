@@ -1,0 +1,3 @@
+[submodule "lc_pydatagenerator"]
+	path = lc_pydatagenerator
+	url = git@github.com:LaunchCodeTechnicalTraining/lc_pydatagenerator.git
