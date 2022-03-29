@@ -1,2 +1,6 @@
 env_python-api
 __pycache__
+*.csv
+!csvs/exercise/*.csv
+!csvs/walkthrough/*.csv
+!csvs/random/*.csv
