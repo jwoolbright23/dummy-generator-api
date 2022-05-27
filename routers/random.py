@@ -30,7 +30,7 @@ async def get_data_user(data_format="json"):
 
     filepath = "csvs/random/{}random-data.csv".format(int(random.randint(1000,100000)))
 
-    user_data(filepath, 1000)
+    user_data(filepath, 10)
     
     task = BackgroundTask(remove_file, path=filepath)
 
@@ -49,7 +49,7 @@ async def get_data_user(data_format="json"):
 
     filepath = "csvs/random/{}random-data.csv".format(int(random.randint(1000,100000)))
 
-    sensitive_user_data(filepath, 1000)
+    sensitive_user_data(filepath, 10)
     
     task = BackgroundTask(remove_file, path=filepath)
 
@@ -68,7 +68,7 @@ async def get_data_user(data_format="json"):
 
     filepath = "csvs/random/{}random-data.csv".format(int(random.randint(1000,100000)))
 
-    ip_data(filepath, 1000)
+    ip_data(filepath, 10)
     
     task = BackgroundTask(remove_file, path=filepath)
 
@@ -87,7 +87,7 @@ async def get_data_user(data_format="json"):
 
     filepath = "csvs/random/{}random-data.csv".format(int(random.randint(1000,100000)))
 
-    transaction_data(filepath, 1000)
+    transaction_data(filepath, 10)
     
     task = BackgroundTask(remove_file, path=filepath)
 
